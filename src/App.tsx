@@ -10,7 +10,7 @@ import mqtt from 'mqtt';
 import { fetchLocalMapBox } from "./app/apiMapBox";
 import AsyncSelect from "react-select/async";
 
-import mapPackage from "./imagens/package.svg";
+import mapMosquito from "./imagens/mosquito.svg";
 import mapPin from "./imagens/pin.svg";
 import CustomPopup from "./component/popup";
 import DatePicker from 'react-date-picker';
@@ -19,8 +19,8 @@ import "./style/App.css";
 
 const initialPosition = { lat: -5.0214, lng: -44.2685 };
 
-const mapPackageIcon = Leaflet.icon({
-  iconUrl: mapPackage,
+const mapMosquitoIcon = Leaflet.icon({
+  iconUrl: mapMosquito,
   iconSize: [58, 68],
   iconAnchor: [29, 68],
   popupAnchor: [170, 2],
@@ -276,7 +276,7 @@ function App() {
         {focos.map((focoDeMosquito) => (
           <Marker
             key={focoDeMosquito.id}
-            icon={mapPackageIcon}
+            icon={mapMosquitoIcon}
             position={[focoDeMosquito.latitude, focoDeMosquito.longitude]}
           >
             <CustomPopup
